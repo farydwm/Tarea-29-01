@@ -1,0 +1,67 @@
+1."Determina si una cadena de texto tiene todos sus caracteres únicos"
+code :
+def x(cadena):
+    # Convertir la cadena a minúsculas y elimina los espacios
+    cadena = cadena.lower().replace(" ", "")
+    
+    # Verificar si las letras de la lista son únicos
+    return len(cadena) == len(set(cadena))
+
+# Pedir al usuario ingresar una cadena
+texto = input("Ingresa una cadena de texto: ")
+
+# Verificar si la cadena no tiene caracteres repetidos
+if x(texto):
+    print("La cadena no tiene caracteres repetidos.")
+else:
+    print("La cadena tiene caracteres repetidos.")
+
+2.""Encuentra el primer número primo en una lista"
+code :
+def x(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False ##con esta operacion sabemos si un numero es primo
+    return True
+
+
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+
+lista = [None] * n  
+for i in range(n):
+    lista[i] = int(input("Ingresa un número: "))
+
+# Buscar el primer número primo en la lista
+for num in lista:
+    if x(num):
+        print("Primer número primo encontrado:", num)
+        break
+else:
+    print("NO EXISTE")
+
+3."Desarrolla un programa que determine si en una lista se encuentra una cadena de caracteres que contenga al menos tres consonantes. Si la cadena existe, debe imprimirla; si no existe, debe imprimir 'NO EXISTE'."
+code :
+def X(cadena):
+    consonantes = "bcdfghjklmnpqrtstvwxyzBCDFGHJKLMNPQRSTVWXYZ" ##agregamos la lista de las consonantes
+    contador = sum(1 for letra in cadena if letra in consonantes)
+    return contador >= 3
+
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+
+lista = [None] * n  
+for i in range(n):
+    lista[i] = input("Ingresa un elemento: ")
+
+# Buscar la primera cadena con 3 o más consonantes
+cadenas_con_consonantes = [palabra for palabra in lista if X(palabra)]
+
+# Imprimir resultado
+if cadenas_con_consonantes:
+    print("Cadena encontrada:", cadenas_con_consonantes[0])  # Muestra la primera encontrada
+else:
+    print("NO EXISTE")
+
