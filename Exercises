@@ -1,0 +1,74 @@
+ ##FIRST POINT
+# Pedir al usuario la cantidad de elementos
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+# Crear una lista vacía con el tamaño definido
+lista = [None] * n  
+
+for i in range(n):
+    lista[i] = input("Ingresa un elemento: ")
+
+# Verificar si hay elementos repetidos
+if len(lista) == len(set(lista)):
+    print("La lista no tiene elementos repetidos.")
+else:
+    print("La lista tiene elementos repetidos.")
+
+##SECOND POINT
+def palindromo_a(cadena):
+    return cadena == cadena[::-1]  # Verifica si la cadena es un palindromo
+
+# Pedir al usuario la cantidad de elementos
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+
+lista = [None] * n  
+for i in range(n):
+    lista[i] = input("Ingresa un elemento: ")
+
+# Buscar el primer palíndromo en la lista
+palindromos = [palabra for palabra in lista if palindromo_a(palabra)]
+
+
+if palindromos:
+    print("Palíndromo encontrado:", palindromos[0])  # Muestra el primero encontrado
+else:
+    print("NO EXISTE")
+##THIRD POINT
+def x(cadena):   ##x va a e ser = tiene mas de dos vocales
+    vocales = "aeiouAEIOU"
+    contador = sum(1 for letra in cadena if letra in vocales)  # Contar vocales en la cadena
+    return contador >= 2
+
+# Pedir al usuario la cantidad de elementos
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+lista = [None] * n  
+for i in range(n):
+    lista[i] = input("Ingresa un elemento: ")
+
+# Buscar la primera cadena con 2 o más vocales
+cadenas_con_vocales = [palabra for palabra in lista if x(palabra)]
+
+# Imprimir resultado
+if cadenas_con_vocales:
+    print("Cadena encontrada:", cadenas_con_vocales[0])  # Muestra la primera encontrada
+else:
+    print("NO EXISTE")
+##FOURTH POINT
+def x(lista):  ##x va a ser la variables igual a la lista del palindromo
+    return lista == lista[::-1]  # Compara la lista con su inverso
+
+# Pedir al usuario la cantidad de elementos
+n = int(input("¿Cuántos elementos tendrá la lista? "))
+
+lista = [None] * n  
+for i in range(n):
+    lista[i] = input("Ingresa un elemento: ")
+
+# Verificar si la lista es palíndromo
+if x(lista):
+    print("La lista es un palíndromo:", lista)
+else:
+    print("NO ES PALÍNDROMO")
+
